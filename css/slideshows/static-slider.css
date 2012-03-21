@@ -1,0 +1,10 @@
+#slider-static-image-wrapper {
+	padding:20px 0px;
+}
+#slider-static-image {
+	width:962px;
+	height:462px;
+	margin:0 auto;
+	position:relative;
+	z-index:8888;
+}

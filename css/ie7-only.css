@@ -1,0 +1,23 @@
+#toptoolbarsearch input.searchbox {
+	border:1px solid #1d1d19;
+	background-color:#353531;
+	line-height:26px;
+}
+#toptoolbarsearch input.searchbutton {
+	background-color:#000000;
+}
+.menu-header ul.sub-menu {
+	left:0px;
+	z-index:100;
+}
+.menu-header ul.sub-menu li {
+	height:30px;
+	line-height:30px;
+}
+#sub-header-content-pattern,
+#sub-header-color-overlay {
+	display:none;
+}
+#sub-header-content-wrapper {
+	z-index:-1;
+}

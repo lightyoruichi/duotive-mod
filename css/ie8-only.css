@@ -1,0 +1,8 @@
+#toptoolbarsearch input.searchbox {
+	border:1px solid #1d1d19;
+	background-color:#353531;
+	line-height:26px;
+}
+#toptoolbarsearch input.searchbutton {
+	background-color:#000000;
+}
