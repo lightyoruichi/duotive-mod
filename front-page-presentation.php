@@ -27,6 +27,7 @@
             <!-- end of intro -->
             </div>
 		<?php endif; ?>      
+        <h3>Dato Seri' Hishammuddin Hussein</h3>
 		<?php if ( get_option('fppre_row1') == '') $fppre_row1 = 'yes'; else $fppre_row1 = get_option('fppre_row1');?>    
         <?php if ( $fppre_row1 == 'yes' ): ?>
             <div id="front-page-presentation-row-1" class="clearfix">

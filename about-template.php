@@ -6,7 +6,7 @@ Template Name: About Template
 ?>
 <div style="width:100%">
 <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=213021633772625182800.00046c9bd07d5d81e3e89&amp;ll=2.129039,103.387352&amp;spn=0.604658,0.621765&amp;t=m&amp;output=embed"></iframe>
-<br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=213021633772625182800.00046c9bd07d5d81e3e89&amp;ll=2.129039,103.387352&amp;spn=0.604658,0.621765&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left">View a larger map</a></small>
+<br />
 </div>
 
 <?php if ( get_option('postsidebar') == '' ) $postsidebar = 'no'; else $postsidebar = get_option('postsidebar'); ?>
@@ -26,20 +26,7 @@ Template Name: About Template
                 <?php endif; ?>
                 <?php if ( get_option('postmeta') == '' ) $postmeta = 'yes'; else $postmeta = get_option('postmeta'); ?>
                 <?php if ( $postmeta == 'yes' ): ?>
-                    <div class="post-meta">
-                        <span class="author"><?php echo __('posted by ','duotive'); ?><a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>, </span>               
-                        <span class="date"><?php the_time('jS'); echo ' '; the_time('F'); echo ' '; the_time('Y');?>, </span>
-                        <?php if ( count( get_the_category() ) ) : ?>
-                            <span class="categories-link"><?php echo __('Categories:','duotive').' <span class="title">'.get_the_category_list( ', ' ).'</span>'; ?></span>                                     
-                        <?php endif; ?>                           
-                        <?php $tags_list = get_the_tag_list( '', ', ' ); ?>
-                        <?php if ( $tags_list ): ?>                     
-                            <span class="tag-links">
-                                <?php echo __('Tags:','duotive').' <span class="title">'.$tags_list.'</span>'; ?>
-                            </span>
-                        <?php endif; ?>                                                  
-                    <!-- end of post meta -->
-                    </div>
+                   
                 <?php endif; ?>
                 <?php if ( get_option('posttopimage') == '' ) $posttopimage = 'yes'; else $posttopimage = get_option('posttopimage'); ?>
                 <?php if ( $posttopimage == 'yes' ): ?>               
@@ -66,6 +53,8 @@ Template Name: About Template
                     <?php endif; ?>                  
                 <?php endif; ?>
                 <div class="entry-content">
+                    <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=213021633772625182800.00046c9bd07d5d81e3e89&amp;ll=2.129039,103.387352&amp;spn=0.604658,0.621765&amp;t=m&amp;source=embed" style="text-align:center">View a larger map</a>
+                    <br>&nbsp;
                     <?php the_content('Read More'); ?>
                     <?php wp_link_pages( array( 'before' => '<span class="page-link">' . 'Pages:', 'after' => '</span>' ) ); ?>
                 <!--end of entry content -->
@@ -158,11 +147,9 @@ Template Name: About Template
 					}
 				}
             ?>   
-		<?php wp_reset_query(); ?>                    
+		<?php wp_reset_query(); ?>                            
         <?php if ( get_option('sharing') == '' ) $sharing = 'yes'; else $sharing = get_option('sharing'); ?>
-        <?php if ( get_option('comments') == '' ) $comments = 'yes'; else $comments = get_option('comments'); ?>
         <?php if ( $sharing == 'yes') require_once('includes/sharing.php'); ?>
-        <?php if ( $comments == 'yes') comments_template( '', true ); ?>
 		<?php endwhile; ?>
     <!-- end of content -->
     </div>

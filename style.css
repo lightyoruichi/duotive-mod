@@ -2028,8 +2028,7 @@ h6 {
 #content table tr td {
 	background:#ffffff;
 	padding:11px 20px;
-	border-bottom:1px solid #e6e4df;
-	border-left:1px solid #e6e4df;
+	border:1px solid #e6e4df;
 }
 #content table tr td.last {
 	border-right:1px solid #e6e4df;
@@ -4577,4 +4576,194 @@ div.duotive-gallery-separator{
 #copyright a:active,
 #copyright a:hover {
 	text-decoration:underline;
+}
+
+#mainmenu {
+	float:right;
+	clear:right;
+	position:relative;
+	margin-top:52px;
+	z-index: 9999 !important;	
+}
+.mainmenu-no-toolbox {
+	margin-top:76px !important;
+}
+#mainmenu .highlight {
+	position:absolute;
+	z-index:30;
+	height:46px;
+	width:100%;
+	border-radius:5px;
+	-moz-border-radius:5px;		
+	-webkit-border-radius:5px;	
+	left:0px;
+	top:0px;
+}
+#mainmenu .shadow {
+	position:absolute;
+	z-index:20;
+	height:46px;
+	width:100%;
+	border-radius:5px;
+	-moz-border-radius:5px;		
+	-webkit-border-radius:5px;	
+	left:1px;
+	top:1px;
+	background:url(images/main-menu-shadow.png) repeat;
+}
+#mainmenu ul {
+	height:43px;
+	padding-bottom:0px;
+	line-height:43px;
+	border-radius:5px;
+	-moz-border-radius:5px;		
+	-webkit-border-radius:5px;
+	position:relative;
+	z-index:40;
+}
+#mainmenu ul > li {
+	height:46px;
+	line-height:43px;
+	float:left;
+	padding-right:2px;
+	padding-left:0px;
+	padding-bottom:0px;
+	position:relative;
+}
+#mainmenu ul > li.prev-to-hover {
+	padding-right:1px;
+	background:none;
+}
+#mainmenu ul > li.last-child,
+#mainmenu ul > li.last-child:hover,
+#mainmenu ul > li:last-child,
+#mainmenu ul > li:last-child:hover {
+	background:none;
+	padding-right:0px;
+}
+#mainmenu ul > li.last-child a:link,
+#mainmenu ul > li.last-child a:visited {
+	border-radius:0px 5px 5px 0px;
+	-moz-border-radius:0px 5px 5px 0px;
+	-webkit-border-radius:0px 5px 5px 0px;			
+}
+#mainmenu ul > li a {
+	-moz-transition: color 0.3s ease-out; 
+	-o-transition: color 0.3s ease-out; 
+	-webkit-transition: color 0.3s ease-out; 
+	-ms-transition: color 0.3s ease-out; 
+	transition: color 0.3s ease-out;		
+}
+#mainmenu ul > li a:link,
+#mainmenu ul > li a:visited {
+	height:46px;
+	line-height:44px;
+	font-size:11pt;
+	text-decoration:none;
+	display:block;
+	padding:0px 14px;
+}
+#mainmenu ul > li a:hover,
+#mainmenu ul > li a:active {
+	line-height:46px;
+}
+.no-js #mainmenu li:hover ul.sub-menu {
+	display:block;
+}
+.no-js #mainmenu li:hover ul.sub-menu ul.sub-menu {
+	display:none;
+}
+.no-js #mainmenu li ul.sub-menu li:hover ul.sub-menu {
+	display:block;
+}
+#mainmenu ul.main-menu-no-home li:first-child a {
+	border-radius:6px 0px 0px 6px;
+}
+#mainmenu ul.sub-menu {
+	position:absolute;
+	top:46px;
+	left:0px;
+	background:none;
+	border-right:0px;
+	height:auto;
+	width:216px;
+	border-radius:0px 0px 5px 5px;
+	box-shadow:1px 1px 0px rgba(0,0,0,0.2);
+	display:none;
+}
+#mainmenu ul.sub-menu ul.sub-menu {
+	left:-100%;
+	top:-1px;
+	margin-left:-2px;
+}
+#mainmenu .sf-sub-indicator {
+	display:none;
+}
+#mainmenu ul.sub-menu:after {
+	background:red;
+	padding:30px;
+}
+#mainmenu ul.sub-menu li,
+#mainmenu ul.sub-menu a:link,
+#mainmenu ul.sub-menu a:visited {
+	background:none;
+	float:none;
+	display:block;
+	height:auto;
+	border-radius:0px !important;
+	font-size:10pt;
+	line-height:12pt;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;	
+}
+#mainmenu ul.sub-menu li,
+#mainmenu ul.sub-menu li:hover {
+	padding-right:0px !important;
+	border-right:0px !important;
+	background:none !important;
+}
+#mainmenu ul.sub-menu a:link,
+#mainmenu ul.sub-menu a:visited {
+	padding:10px 16px;
+}
+#mainmenu ul.sub-menu a:hover,
+#mainmenu ul.sub-menu a:active {
+	border-right:0px !important;
+}
+#mainmenu ul > li.sfHover ul li a:link,
+#mainmenu ul > li.sfHover ul li a:visited {
+	background:none;
+}
+#mainmenu li.home-icon {
+	font-size:0px;
+	line-height:0px;
+	width:45px;
+	height:46px;
+}
+#mainmenu li.home-icon a:link,
+#mainmenu li.home-icon a:visited {
+	font-size:0px;
+	line-height:0px;
+	text-indent:-9999px;
+	overflow:hidden;
+	width:16px;
+	height:46px;	
+}
+#mainmenu li.home-icon a:hover,
+#mainmenu li.home-icon a:active {
+	background:none;
+}
+
+#content form textarea {
+width:520px;
+}
+
+#content input[type="button"], #content input[type="submit"], #content input[type="reset"]{
+	margin-left:17px;
+	}
+	
+
+.tablecenter {
+padding-left:20px;
 }
