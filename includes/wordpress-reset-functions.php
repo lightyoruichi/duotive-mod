@@ -200,15 +200,11 @@
 
 	//DISPLAY THE TITLE OUTSIDE LOOP
 
-
 	function get_title_outside_loop() { ?>
 		<?php if ( is_page() || is_single()): ?>
         	<?php global $post; ?>
-        	<?php $title = apply_filters( 'the_title', wp_trim_words( get_the_title($post->ID), 8, '&hellip;' ) );?>
-        	<h1 <?php if (strlen($title) > "42") { echo "class='long-post-title'"; }?>>
-            <?php 
-            echo $title;?></h1>
-            <?php elseif ( is_author() ): ?>
+            <h1><?php echo get_the_title($post->ID); ?></h1>
+        <?php elseif ( is_author() ): ?>
             <h1>
             <?php echo __('Author Archives: ', 'duotive'); ?>
             <?php $author_id = get_query_var('author'); ?>

@@ -26,10 +26,7 @@
     <?php endif; ?>        
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/fonts.php" />    
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/slideshows/nivo-slider-general.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/main-theme-light.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/utilities/prettyPhoto.css" />   
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
- 
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/utilities/prettyPhoto.css" />    
     <!-- GET THE SLIDERS CSS -->
     <?php $slidertype =  get_option('slidertype'); if ( $slidertype == '' ) $slidertype='static-image'; else $slidertype =  get_option('slidertype'); ?>
     <?php switch ( $slidertype ) {
@@ -125,20 +122,13 @@
 <?php if ( $headertoolbar == 'yes' ) : ?>
     <div id="toptoolbar-wrapper">
         <div id="toptoolbar">
-        <a id="header-logo" href="<?php echo home_url( '/' ); ?>">
-        <?php if ( $dt_headerLogo != '' ) : ?>
-            <?php $vertical = get_option('dt_headerLogoVertical'); ?>
-            <?php $horizontal = get_option('dt_headerLogoHorizontal'); ?>
-            <?php if ( $vertical != '' && $horizontal != '' ) $class = ' style="margin-top:'.$vertical.'px; margin-left:'.$horizontal.'px;"'; ?>
-            <img<?php echo $class; ?> src="<?php echo $dt_headerLogo; ?>" alt="<?php echo get_bloginfo('name'); ?>" />
-        <?php endif; ?>
-    </a>
 			<?php $headertoolbarmenu = get_option('headertoolbarmenu'); ?>
             <?php if ( $headertoolbarmenu == '' ) $headertoolbarmenu = 'no'; else $headertoolbarmenu = get_option('headertoolbarmenu'); ?>
             <?php if ( $headertoolbarmenu == 'yes' ) : ?>
-	            <?php wp_nav_menu( array( 'container_class' => 'mainmenu', 'fallback_cb' => '',  'show_home' => false ) ); ?>
+	            <?php wp_nav_menu( array( 'container_class' => 'menu-toptoolbar', 'fallback_cb' => '', 'theme_location' => 'toptoolbar', 'show_home' => false ) ); ?>
             <?php endif; ?>
-      		<?php $headersearch = get_option('headersearch'); ?>
+	
+    		<?php $headersearch = get_option('headersearch'); ?>
             <?php if ( $headersearch == '' ) $headersearch = 'yes'; else $headersearch = get_option('headersearch'); ?>
             <?php if ( $headersearch == 'yes' ) : ?>          
                 <form method="get" id="toptoolbarsearch" action="<?php echo bloginfo( 'wpurl' ); ?>">
@@ -181,7 +171,7 @@
     <!-- end of top toolbar -->
     </div>
 <?php endif; ?>
-<div>
+<div id="header-wrapper">
 	<?php $headerpattern = get_option('headerpattern'); ?>
     <?php if ( $headerpattern == '' ) $headerpattern = ''; else $headerpattern = get_option('headerpattern'); ?>
 	<div id="header-pattern" class="<?php echo $headerpattern; ?>">
@@ -197,14 +187,24 @@
                 	<h1><?php bloginfo( 'name' ); ?></h1>
                 <?php endif; ?>
         	</a>
- <nav id="mainmenu">
-    	<ul class="menu-items-parent">
-		    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'items_wrap' => '%3$s','fallback_cb' => 'false', 'walker' => new Walker_Nav_Menu() ) ); ?>
-
-        </ul>
-        <div class="highlight"></div>
-        <div class="shadow"></div>
-    </nav>               
+            <div id="main-menu">
+            	<?php $mainmenu = get_option('mainmenu'); ?>
+                <?php if ( $mainmenu == '' ) $mainmenu = 'with-description'; else $mainmenu = get_option('mainmenu'); ?>
+                <?php 
+					switch($mainmenu)
+					{
+						case 'with-description':
+							$walker = new DuotiveMenuWalker;
+							wp_nav_menu( array( 'container_class' => 'menu-header','fallback_cb' => '', 'theme_location' => 'primary', 'walker' => $walker, 'show_home' => false ) );
+						break;
+						case 'without-description':
+							$walker = new DuotiveMenuWalkerWithoutDescription;
+							wp_nav_menu( array( 'container_class' => 'menu-header no-description','fallback_cb' => '', 'theme_location' => 'primary', 'walker' => $walker, 'show_home' => false ) );
+						break;						
+					}
+		  		?>            
+			<!-- end of main menu -->                
+			</div>                
         <!-- end of header -->
         </div>
     <!-- end of header pattern -->
