@@ -14,6 +14,9 @@ get_header(); ?>
                     <?php echo $title; ?>
                 </h1>                   	
             <?php endif; ?>                
+            <?php if ( the_content() ): ?>
+                <?php the_content(); ?>
+            <?php endif; ?>
             <br /> 
 			<div id="contact-page">
             	<div id="contact-sidebar-wrapper">
@@ -65,16 +68,13 @@ get_header(); ?>
                     </div>
                 <!-- end of contact sidebar wrapper -->
                 </div>
-                <!--
                 <div id="contact-confirmation-message" class="note"></div>
 				<script type="text/javascript">
 					 var RecaptchaOptions = {
 						theme : 'custom',
 						custom_theme_widget: 'recaptcha_widget'
 					 };
-                </script>
-
-
+                </script>                   
                 <form id="contactform" method="post" class="jqtransformdone" action="<?php bloginfo('template_url'); ?>/page-contact-sender.php">
                 	<?php $destination_email = get_option('destination_email'); if ( $destination_email == '' ) $destination_email = get_bloginfo('admin_email'); else $destination_email = get_option('destination_email'); ?>
                     <input type="hidden" name="admin_email" value="<?php echo $destination_email; ?>" />
@@ -131,12 +131,6 @@ get_header(); ?>
                         <div id="contact-form-loader"></div>
                     </div>
                 </form> 
-            -->
-            <div id="content">
-            <?php if ( the_content() ): ?>
-                <?php the_content(); ?>
-            <?php endif; ?>
-            </div>
             </div>
         <!-- end of content -->
         </div>

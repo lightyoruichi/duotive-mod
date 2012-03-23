@@ -18,7 +18,6 @@
                 <?php endif; ?>
                 <div class="sep">&nbsp;</div>
             <!-- end of intro -->
-             <img style="float: right; margin-top:-119px;" src="http://beta.tandemic.com/images/people2.png" />
             </div>
 		<?php endif; ?>            
 		<?php if ( get_option('fpb_posts') == '') $fpb_posts = 'yes'; else $fpb_posts = get_option('fpb_posts');?>  

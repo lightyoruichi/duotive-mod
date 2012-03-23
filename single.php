@@ -9,14 +9,18 @@
     <?php endif; ?>
 	<div id="content"<?php if ( $postsidebar == 'yes') echo ' class="content-full-width"'; ?>>
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-            <div id="single">            
-                    <h3 class="title">
+            <div id="single">
+				<?php $slider_display = get_option('slider_display'); if ( $slider_display == '' ) $slider_display = '1'; else $slider_display = get_option('slider_display'); ?>
+                <?php if ( $slider_display == 0 ) : ?>             
+                    <h1 class="title">
                         <?php the_title(); ?>
                         <!--end of entry title -->
-                    </h3>
+                    </h1>
+                <?php endif; ?>
                 <?php if ( get_option('postmeta') == '' ) $postmeta = 'yes'; else $postmeta = get_option('postmeta'); ?>
                 <?php if ( $postmeta == 'yes' ): ?>
-                    <div class="post-meta">              
+                    <div class="post-meta">
+                        <span class="author"><?php echo __('posted by ','duotive'); ?><a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>, </span>               
                         <span class="date"><?php the_time('jS'); echo ' '; the_time('F'); echo ' '; the_time('Y');?>, </span>
                         <?php if ( count( get_the_category() ) ) : ?>
                             <span class="categories-link"><?php echo __('Categories:','duotive').' <span class="title">'.get_the_category_list( ', ' ).'</span>'; ?></span>                                     
