@@ -27,7 +27,7 @@
             <!-- end of intro -->
             </div>
 		<?php endif; ?>      
-        <h3>Dato Seri' Hishammuddin Hussein</h3>
+        <h3 class="dshh">Dato Seri' Hishammuddin Hussein</h3>
 		<?php if ( get_option('fppre_row1') == '') $fppre_row1 = 'yes'; else $fppre_row1 = get_option('fppre_row1');?>    
         <?php if ( $fppre_row1 == 'yes' ): ?>
             <div id="front-page-presentation-row-1" class="clearfix">
@@ -78,7 +78,7 @@
                                 <?php the_title(); ?>
                             </a>
                         </h6>                                            
-                        <?php global $more; $more = 0; the_content(__('Read More &#187;','duotive')); ?>
+                        <?php global $more; $more = 0; the_excerpt(__('Read More &#187;','duotive')); ?>
                     </div>
                     <?php if ( $i%4 == 0 ) echo '<div class="post-sep"></div>'; ?>
                     <?php $i++; ?>                        

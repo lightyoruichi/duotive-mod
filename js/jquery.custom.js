@@ -524,3 +524,16 @@ jQuery(window).load(function () {
 	}
 	equalHeight();
 });
+
+
+$(function() {
+  $("#sub-header-content h1").each(function() {
+    $(this).addClass($(this).text().length > 25 ? "large" : "small");
+  });
+});
+
+
+if ($('#sub-header-content > div.field-item:contains("someText")').length > 0) {
+    $("#somediv").addClass("thisClass");
+}
+

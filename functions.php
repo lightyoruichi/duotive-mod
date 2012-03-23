@@ -92,4 +92,16 @@ jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>').attr('placeh
 </script>
 <?php
 }
+
+
+function short_title($after = '', $length) {
+	$mytitle = get_the_title();
+	if ( strlen($mytitle) > $length ) {
+	$mytitle = substr($mytitle,0,$length);
+	echo $mytitle . $after;
+	} else {
+	echo $mytitle;
+	}
+}
+
 ?>	

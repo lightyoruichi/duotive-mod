@@ -27,7 +27,9 @@
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/fonts.php" />    
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/slideshows/nivo-slider-general.css" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/main-theme-light.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/utilities/prettyPhoto.css" />    
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $template_url; ?>/css/utilities/prettyPhoto.css" />   
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
     <!-- GET THE SLIDERS CSS -->
     <?php $slidertype =  get_option('slidertype'); if ( $slidertype == '' ) $slidertype='static-image'; else $slidertype =  get_option('slidertype'); ?>
     <?php switch ( $slidertype ) {
