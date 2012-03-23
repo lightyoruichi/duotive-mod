@@ -1,0 +1,56 @@
+#mainmenu ul {
+	background:url(../images/main-theme-light/main-menu-bg.png) repeat-x;
+	list-style: none;
+}
+#mainmenu ul > li, #mainmenu li.home-icon:hover {
+	background:url(../images/main-theme-light/main-menu-sep.png) no-repeat right top;
+}
+#mainmenu ul > li:hover {
+	background:url(../images/main-theme-light/main-menu-sep.png) no-repeat right bottom;
+}
+#mainmenu ul > li.prev-to-hover {
+	border-right:1px solid #cccccc;
+}
+#mainmenu ul > li a:link, #mainmenu ul > li a:visited {
+	text-shadow:1px 1px 0px #FFF;
+}
+
+#mainmenu ul > li a:hover,
+#mainmenu ul > li a:active {
+	background:url(../images/main-theme-light/main-menu-hover.png) repeat-x;
+	color:#4c4c4c !important;
+}
+#mainmenu ul > li.sfHover a:link,
+#mainmenu ul > li.sfHover a:visited {
+	background:url(../images/main-theme-light/main-menu-hover.png) repeat-x;	
+}
+#mainmenu ul > li.current-menu-item a:link,
+#mainmenu ul > li.current-menu-item a:visited {
+	color:#4c4c4c !important;	
+}
+#mainmenu li.home-icon a {
+	background:url(../images/main-theme-light/home-icon.png) no-repeat left top !important;
+}
+#mainmenu li.home-icon:hover a, #mainmenu li.home-active a {
+	background:url(../images/main-theme-light/home-icon.png) no-repeat left bottom !important;
+}
+#mainmenu .highlight {
+	background:url(../images/main-theme-light/main-menu-highlight.png) repeat bottom;
+}
+#mainmenu ul.sub-menu {
+	border-top:1px solid #fff;
+	border-bottom:2px solid #ccc;
+	border-left:1px solid #fff;
+	background:#FFF url(../images/main-theme-light/submenu-bg.png) repeat;
+}
+#mainmenu ul.sub-menu li {
+	border-bottom:1px solid #ebebeb;
+}
+#mainmenu ul.sub-menu a:link, #mainmenu ul.sub-menu a:visited {
+	border-top:1px solid #FFF;
+	color:#808080 !important;
+}
+#mainmenu li.current-menu-item ul.sub-menu a:link,
+#mainmenu li.current-menu-item ul.sub-menu a:visited {
+	color:#808080 !important;	
+}
