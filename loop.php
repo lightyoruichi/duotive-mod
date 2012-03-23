@@ -25,7 +25,7 @@
 	            <a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php echo __('Read More &#187;','duotive'); ?></a>                
             <?php endif; ?>
             <div class="post-meta">
-                <span class="author"><?php echo __('posted by ','duotive'); ?><a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>, </span>               
+                <!--<span class="author"><?php echo __('posted by ','duotive'); ?><a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>, </span>-->
                 <span class="post-date"><?php the_time('jS'); echo ' '; the_time('F'); echo ' '; the_time('Y');?></span>
                 <?php if ( count( get_the_category() ) ) : ?>
                     <span class="categories-link">, <?php echo __('Categories:','duotive').' <span class="title">'.get_the_category_list( ', ' ).'</span>'; ?></span>                                     
