@@ -18,7 +18,8 @@ Template Name: Blog - Accordion Layout
                         <h1 class="page-title">
                             <?php echo $title; ?>
                         </h1>                   	
-                    <?php endif; ?>                 
+                    <?php endif; ?>
+                    <?php the_content(); ?>                 
                 	<div id="blog-accordion">	
 						<?php 
                             global $more;

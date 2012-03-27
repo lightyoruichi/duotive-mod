@@ -21,13 +21,13 @@
                 <div class="sep">&nbsp;</div>
                  <div style="float:right; margin-top: -20px;">
                     <a href="/yb-hoo-song-chang/" class="more-link">YB Hoo<br> Seong<br> Chang</a>
-                    <a href="/dato-seri-hishammuddin-tun-hussein/" class="more-link">Dato' Sri<br> Hishammuddin<br> Tun Hussein</a>
+                    <a href="/dato-seri-hishammuddin-tun-hussein/" class="more-link">Dato' Seri<br> Hishammuddin<br> Tun Hussein</a>
                     <a href="/yb-encik-vidyananthan-al-ramanadhan/" class="more-link">YB Encik<br> Vidyananthan<br> Ramanadhan</a>
                  </div>
             <!-- end of intro -->
             </div>
 		<?php endif; ?>      
-        <h3 class="dshh">Dato Seri' Hishammuddin Hussein</h3>
+        <h3 class="dshh">Dato' Seri Hishammuddin Hussein</h3>
 		<?php if ( get_option('fppre_row1') == '') $fppre_row1 = 'yes'; else $fppre_row1 = get_option('fppre_row1');?>    
         <?php if ( $fppre_row1 == 'yes' ): ?>
             <div id="front-page-presentation-row-1" class="clearfix">

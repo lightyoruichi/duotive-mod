@@ -202,7 +202,7 @@ function get_slider_code ($type){
 						$slider .= '</div>';
 						$slider .= '<ul>';
 							foreach ( $slides as $slide ):
-								$slider .= '<li><a href="javascript: void(0)">'.stripslashes($slide->TITLE).'</a></li>';
+								$slider .= '<li><a class="slider-current-link" href="javascript: void(0)">'.stripslashes($slide->TITLE).'</a></li>';
 							endforeach;
 						$slider .= '</ul>';
 					$slider .= '</div>';
